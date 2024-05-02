@@ -27,10 +27,6 @@ import projetofx.ProjetoFX;
  * @author Vickttor
  */
 public class MenuInterface implements Initializable {
-    
-
-    @FXML
-    private Menu userMenu;
 
     @FXML
     private MenuItem insertUserMenuItem;
@@ -38,17 +34,13 @@ public class MenuInterface implements Initializable {
     @FXML
     private MenuItem listUserMenuItem;
 
-    @FXML
-    private Menu clientMenu;
-
+    
     @FXML
     private MenuItem insertClientMenuItem;
 
     @FXML
     private MenuItem listClientMenuItem;
 
-    @FXML
-    private Menu petMenu;
 
     @FXML
     private MenuItem insertPetMenuItem;
@@ -56,9 +48,7 @@ public class MenuInterface implements Initializable {
     @FXML
     private MenuItem listPetMenuItem;
     
-    @FXML
-    private Menu clientPetMenu;
-
+    
     @FXML
     private MenuItem insertClientPetMenuItem;
 

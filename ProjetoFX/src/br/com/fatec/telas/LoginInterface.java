@@ -35,12 +35,6 @@ import projetofx.ProjetoFX;
 public class LoginInterface implements Initializable {
 
     @FXML
-    private Label loginLabel;
-
-    @FXML
-    private Label passwordLabel;
-
-    @FXML
         private TextField loginTxtField;
 
     @FXML
@@ -49,31 +43,37 @@ public class LoginInterface implements Initializable {
     @FXML
     private Button sendButton;
     
-    ControllerUser usuCont = null;
+    ControllerUser controller = null;
 
     private void initComponentes () {
         sendButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                usuCont = new ControllerUser();
-                User usu = new User(loginTxtField.getText(),passwordTxtField.getText(),"","");
+                controller = new ControllerUser();
+                User user = new User(loginTxtField.getText(),passwordTxtField.getText(),"","");
+                
                 try {
-                    Object usuSaida = usuCont.validate(usu);
-                    try
-                        {
+                    Boolean validatedUser = controller.validate(user);
+                    
+                    if(validatedUser) {
+                        try {
                             FXMLLoader loader = new FXMLLoader(ProjetoFX.class.getResource("/br/com/fatec/xmls/MenuInterface.fxml"));
-                            Parent novatela  = loader.load();
+                            Parent screen  = loader.load();
                             Stage stg = ProjetoFX.getStage();
-                            stg.setScene(new Scene(novatela));
+                            stg.setScene(new Scene(screen));
                             stg.show();
                         } catch(Exception e) {
+                            System.out.println(e.getMessage());
                         } catch (Throwable ex) {                    
-                        Logger.getLogger(LoginInterface.class.getName()).log(Level.SEVERE, null, ex);
-                    }                    
+                            Logger.getLogger(LoginInterface.class.getName()).log(Level.SEVERE, null, ex);
+                        }               
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Usuário Inválido");
+                    }
+                         
                 } catch (SQLException | ClassNotFoundException ex) {
                     Logger.getLogger(LoginInterface.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                JOptionPane.showMessageDialog(null, usu.getLogin());
             }
         });
         

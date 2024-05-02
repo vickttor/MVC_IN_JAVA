@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.telas.client.UpdateClientInterface">
+   <children>
+      
+        <Label fx:id="labelName" layoutX="118.0" layoutY="159.0" text="Nome" />
+        <TextField fx:id="txtName" layoutX="118.0" layoutY="176.0" maxWidth="1000.0" prefHeight="25.0" prefWidth="324.0" />
+        <Label fx:id="labelCpf" layoutX="118.0" layoutY="201.0" text="CPF" />
+        <TextField fx:id="txtCpf" layoutX="118.0" layoutY="218.0" maxWidth="1000.0" prefHeight="25.0" prefWidth="324.0" />
+        <Label fx:id="labelTel" layoutX="118.0" layoutY="240.0" text="TEL" />
+        <TextField fx:id="txtTel" layoutX="118.0" layoutY="257.0" maxWidth="1000.0" prefHeight="25.0" prefWidth="324.0" />
+        <Label fx:id="labelAddress" layoutX="118.0" layoutY="282.0" text="ENDEREÇO" />
+        <TextField fx:id="txtAddress" layoutX="118.0" layoutY="299.0" maxWidth="1000.0" prefHeight="25.0" prefWidth="324.0" />
+      
+      <Button fx:id="btnGoBack" layoutX="249.0" layoutY="378.0" mnemonicParsing="false" text="Voltar" />
+      <Button fx:id="btnSend" layoutX="249.0" layoutY="338.0" mnemonicParsing="false" text="Salvar" />
+      <Label fx:id="lbIdT" layoutX="151.0" layoutY="90.0" text="Id" />
+      <Label fx:id="lbId" layoutX="119.0" layoutY="90.0" text="Id" />
+   </children>
+</AnchorPane>

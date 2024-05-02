@@ -3,11 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.fatec.telas.user;
+package br.com.fatec.telas.client;
 
 import br.com.fatec.telas.LoginInterface;
-import padraomvc.model.bean.User;
-import padraomvc.controller.ControllerUser;
+import padraomvc.model.bean.Client;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -24,6 +23,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import padraomvc.controller.ControllerClient;
 import projetofx.ProjetoFX;
 
 /**
@@ -31,32 +31,30 @@ import projetofx.ProjetoFX;
  *
  * @author Vickttor
  */
-public class InsertUserInterface implements Initializable {
-
+public class InsertClientInterface implements Initializable {
+  
     
     @FXML
-    private Button btSalvar;
+    private TextField txtName;
 
 
     @FXML
-    private TextField txtLogin;
+    private TextField txtCpf;
 
 
     @FXML
-    private TextField txtSenha;
+    private TextField txtTel;
 
 
     @FXML
-    private TextField txtStatus;
-
-
-    @FXML
-    private TextField txtTipo;
+    private TextField txtAddress;
     
     @FXML
-    private Button btVoltar;
+    private Button btnGoBack;
+    @FXML
+    private Button btnSend;
 
-    ControllerUser controller = null;
+    ControllerClient controller = null;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -64,21 +62,23 @@ public class InsertUserInterface implements Initializable {
     }    
     
     private void initComponentes () {
-        btSalvar.setOnAction((ActionEvent event) -> {
-            controller = new ControllerUser();
-            User usu = new User(txtLogin.getText(),txtSenha.getText(),txtStatus.getText(),txtTipo.getText());
+        btnSend.setOnAction((ActionEvent event) -> {
+            controller = new ControllerClient();
+            Client client = new Client(txtName.getText(),txtCpf.getText(),txtTel.getText(), txtAddress.getText());
             try {
-                usu = (User) controller.insert(usu);
+                client = (Client) controller.insert(client);
+                
             } catch (SQLException | ClassNotFoundException ex) {
                 Logger.getLogger(LoginInterface.class.getName()).log(Level.SEVERE, null, ex);
             }
-            JOptionPane.showMessageDialog(null, usu.getLogin());
+            JOptionPane.showMessageDialog(null, client.getName() + " | " + client.getCpf());
         });
         
         
-        btVoltar.setOnAction((ActionEvent event) -> {
+        btnGoBack.setOnAction((ActionEvent event) -> {
             FXMLLoader loader = new FXMLLoader(ProjetoFX.class.getResource("/br/com/fatec/xmls/MenuInterface.fxml"));
             Parent screen;
+            
             try {
                 screen = loader.load();
                 Stage stg = ProjetoFX.getStage();

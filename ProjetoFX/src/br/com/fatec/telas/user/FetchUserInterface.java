@@ -168,9 +168,9 @@ public class FetchUserInterface implements Initializable {
         oList = FXCollections.observableArrayList(lista);
         tid.setCellValueFactory(new PropertyValueFactory<User,String>("id"));
         tlogin.setCellValueFactory(new PropertyValueFactory<User,String>("login"));
-        tsenha.setCellValueFactory(new PropertyValueFactory<User,String>("senha"));
+        tsenha.setCellValueFactory(new PropertyValueFactory<User,String>("password"));
         tstatus.setCellValueFactory(new PropertyValueFactory<User,String>("status"));
-        ttipo.setCellValueFactory(new PropertyValueFactory<User,String>("tipo"));
+        ttipo.setCellValueFactory(new PropertyValueFactory<User,String>("type"));
         listaUsuario.setItems(oList);
     }
     
