@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.telas.ConsultarUsuarioInterface">
+   <children>
+      <Label fx:id="lbLogin" layoutX="14.0" layoutY="14.0" text="Login" />
+      <TextField fx:id="txtLogin" layoutX="14.0" layoutY="41.0" prefHeight="25.0" prefWidth="273.0" />
+      <Button fx:id="btConsultar" layoutX="287.0" layoutY="41.0" mnemonicParsing="false" text="Consultar" />
+      <TableView fx:id="listaUsuario" layoutX="14.0" layoutY="78.0" prefHeight="277.0" prefWidth="536.0">
+        <columns>
+            <TableColumn fx:id="tid" prefWidth="41.0" text="ID" />
+            <TableColumn fx:id="tlogin" prefWidth="140.0" text="LOGIN" />
+            <TableColumn fx:id="tsenha" prefWidth="140.0" text="SENHA" />
+            <TableColumn fx:id="tstatus" prefWidth="85.0" text="STATUS" />
+            <TableColumn fx:id="ttipo" prefWidth="85.0" text="TIPO" />
+        </columns>
+      </TableView>
+      <Button fx:id="btAlterar" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" text="Alterar" />
+      <Button fx:id="btExcluir" layoutX="66.0" layoutY="361.0" mnemonicParsing="false" text="Excluir" />
+      <Button fx:id="btVoltar" layoutX="116.0" layoutY="361.0" mnemonicParsing="false" text="Voltar" />
+   </children>
+</AnchorPane>

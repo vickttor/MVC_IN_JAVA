@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ProjetoFX.jnlp">
+  <information>
+    <title>ProjetoFX</title>
+    <vendor>Victor</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="ProjetoFX.jar" size="22902" download="eager" />
+    <jar href="lib\PadraoMVC.jar" size="70754" download="eager" />
+    <jar href="lib\javafx-swt.jar" size="37082" download="eager" />
+    <jar href="lib\javafx.base.jar" size="757147" download="eager" />
+    <jar href="lib\javafx.controls.jar" size="2599761" download="eager" />
+    <jar href="lib\javafx.fxml.jar" size="130699" download="eager" />
+    <jar href="lib\javafx.graphics.jar" size="4318352" download="eager" />
+    <jar href="lib\javafx.media.jar" size="278661" download="eager" />
+    <jar href="lib\javafx.swing.jar" size="90415" download="eager" />
+    <jar href="lib\javafx.web.jar" size="728771" download="eager" />
+    <jar href="lib\mysql-connector-j-8.3.0.jar" size="2495514" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="projetofx.ProjetoFX"  name="ProjetoFX" />
+  <update check="always"/>
+</jnlp>
