@@ -26,6 +26,8 @@ import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import padraomvc.controller.ControllerClientPet;
 import padraomvc.model.bean.ClientPet;
+import padraomvc.model.bean.Client;
+import padraomvc.model.bean.Pet;
 import projetofx.ProjetoFX;
 
 public class FetchClientPetInterface implements Initializable {
@@ -34,7 +36,7 @@ public class FetchClientPetInterface implements Initializable {
     private TextField txtObservation;
 
     @FXML
-    private TableView<ClientPet> listClientPet;
+    private TableView<ClientPetTable> listClientPet;
 
     @FXML
     private TableColumn<ClientPet,String> tId;
@@ -43,7 +45,13 @@ public class FetchClientPetInterface implements Initializable {
     private TableColumn<ClientPet,String> tIdP;
     
     @FXML
+    private TableColumn<ClientPet,String> tPetName;
+    
+    @FXML
     private TableColumn<ClientPet,String> tIdC;
+    
+    @FXML
+    private TableColumn<ClientPet,String> tClientName;
     
     @FXML
     private TableColumn<ClientPet,String> tObservation;
@@ -62,11 +70,11 @@ public class FetchClientPetInterface implements Initializable {
 
     ControllerClientPet clientPetController = null;
     
-    ObservableList<ClientPet> oList = null;
+    ObservableList<ClientPetTable> oList = null;
 
-    List<ClientPet> lista = null;
+    List<ClientPetTable> lista = null;
     
-    public static ClientPet clientPetOutput;
+    public static ClientPetTable clientPetOutput;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -78,9 +86,9 @@ public class FetchClientPetInterface implements Initializable {
         clientPetController = new ControllerClientPet();
 
         btnFetch.setOnAction((ActionEvent event) -> {
-            ClientPet usugrupo = new ClientPet(txtObservation.getText());
+            ClientPet clientPet = new ClientPet(txtObservation.getText());
             try {
-                montaLista(usugrupo);
+                montaLista(clientPet);
             } catch (SQLException | ClassNotFoundException ex) {
                 Logger.getLogger(FetchClientPetInterface.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null,"Erro = Na Lista");
@@ -106,9 +114,11 @@ public class FetchClientPetInterface implements Initializable {
         btnDelete.setOnAction((ActionEvent event) -> {
             TablePosition pos = listClientPet.getSelectionModel().getSelectedCells().get(0);
             int row = pos.getRow();
-            ClientPet grupo = listClientPet.getItems().get(row);
+            ClientPetTable clientPetTable = listClientPet.getItems().get(row);
             try {
-                clientPetController.delete(grupo);
+                ClientPet clientPet = new ClientPet(clientPetTable.getId(), clientPetTable.getIdC(), clientPetTable.getIdP(), clientPetTable.getObs());
+                
+                clientPetController.delete(clientPet);
                 listClientPet.getItems().remove(row);
             } catch (SQLException | ClassNotFoundException ex) {
                 Logger.getLogger(FetchClientPetInterface.class.getName()).log(Level.SEVERE, null, ex);
@@ -134,27 +144,42 @@ public class FetchClientPetInterface implements Initializable {
     
     public void montaLista(ClientPet clientPet) throws SQLException, ClassNotFoundException {
         List<Object> listaObj = clientPetController.list(clientPet);
+                   
+        
         lista = new ArrayList<>();
 
-        for (Object objLista : listaObj) {
-            lista.add((ClientPet) objLista);
+        for (Object clientPetObj : listaObj) {
+            
+            ClientPet clientPetItem = (ClientPet) clientPetObj;
+            
+            Client client = (Client) clientPetItem.getClient();
+            Pet pet = (Pet) clientPetItem.getPet();
+
+            ClientPetTable cpt = new ClientPetTable(clientPetItem.getId(), clientPetItem.getIdC(), client.getName(), clientPetItem.getIdP(), pet.getName(), clientPetItem.getObs());
+
+            cpt.setClientName(client.getName());
+            cpt.setPetName(pet.getName());
+            
+            lista.add(cpt);
         }
 
         oList = FXCollections.observableArrayList(lista);
         tId.setCellValueFactory(new PropertyValueFactory<>("id"));
         tIdP.setCellValueFactory(new PropertyValueFactory<>("idP"));
+        tPetName.setCellValueFactory(new PropertyValueFactory<>("petName"));
         tIdC.setCellValueFactory(new PropertyValueFactory<>("idC"));
+        tClientName.setCellValueFactory(new PropertyValueFactory<>("clientName"));
         tObservation.setCellValueFactory(new PropertyValueFactory<>("obs"));
         listClientPet.setItems(oList);
     }
     
     
 
-    public void setObservation(ClientPet clientPet) {
+    public void setObservation(ClientPetTable clientPet) {
         FetchClientPetInterface.clientPetOutput = clientPet;
     }
     
-    public ClientPet getObservation() {
+    public ClientPetTable getObservation() {
         return FetchClientPetInterface.clientPetOutput;
     }
 

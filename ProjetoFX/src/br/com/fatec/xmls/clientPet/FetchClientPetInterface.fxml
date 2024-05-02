@@ -12,11 +12,13 @@
       <Label fx:id="labelObservation" layoutX="14.0" layoutY="14.0" text="Observação" />
       <TextField fx:id="txtObservation" layoutX="14.0" layoutY="41.0" prefHeight="25.0" prefWidth="273.0" />
 
-      <TableView fx:id="listClientPet" layoutX="14.0" layoutY="78.0" prefHeight="277.0" prefWidth="536.0">
+      <TableView fx:id="listClientPet" layoutX="14.0" layoutY="78.0" prefHeight="277.0" prefWidth="800.0">
         <columns>
             <TableColumn fx:id="tId" prefWidth="41.0" text="ID" />
-            <TableColumn fx:id="tIdC" prefWidth="140.0" text="Cliente" />
-            <TableColumn fx:id="tIdP" prefWidth="184.0" text="Pet" />
+            <TableColumn fx:id="tIdC" prefWidth="140.0" text="ID Cliente" />
+            <TableColumn fx:id="tClientName" prefWidth="140.0" text="Nome do cliente" />
+            <TableColumn fx:id="tIdP" prefWidth="184.0" text="ID Pet" />
+            <TableColumn fx:id="tPetName" prefWidth="140.0" text="Nome do Pet" />
             <TableColumn fx:id="tObservation" prefWidth="170.0" text="Observação" />
         </columns>
       </TableView>

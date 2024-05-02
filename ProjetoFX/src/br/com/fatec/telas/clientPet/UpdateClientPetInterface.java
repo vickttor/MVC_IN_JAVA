@@ -159,7 +159,7 @@ public class UpdateClientPetInterface implements Initializable {
         }
     }
     
-    public void setObservation(ClientPet clientPet) {
+    public void setObservation(ClientPetTable clientPet) {
         if (clientPet != null) {
        
             this.lbIdT.setText(""+clientPet.getId());
