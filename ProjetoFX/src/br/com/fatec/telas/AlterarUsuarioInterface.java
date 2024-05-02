@@ -112,7 +112,7 @@ public class AlterarUsuarioInterface implements Initializable {
                                   txtTipo.getText());
 
                 try {
-                    usuCont.alterar(usu);
+                    usuCont.update(usu);
                 } catch (SQLException ex) {
                     Logger.getLogger(AlterarUsuarioInterface.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (ClassNotFoundException ex) {
@@ -138,9 +138,9 @@ public class AlterarUsuarioInterface implements Initializable {
         JOptionPane.showMessageDialog(null, usu.getLogin());
         this.lbIdT.setText(""+usu.getId());
         this.txtLogin.setText(usu.getLogin());
-        this.txtSenha.setText(usu.getSenha());
+        this.txtSenha.setText(usu.getPassword());
         this.txtStatus.setText(usu.getStatus());
-        this.txtTipo.setText(usu.getTipo());
+        this.txtTipo.setText(usu.getType());
     }
     
 }

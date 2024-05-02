@@ -157,7 +157,7 @@ public class ConsultarUsuarioInterface implements Initializable {
     }
     
     public void montaLista(User usu) throws SQLException, ClassNotFoundException {
-        List<Object> listaObj = usuCont.listar(usu);
+        List<Object> listaObj = usuCont.list(usu);
         lista = new ArrayList<>();
 
         for (Object objLista : listaObj) {

@@ -22,7 +22,7 @@
         </columns>
       </TableView>
       <Button fx:id="btAlterar" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" text="Alterar" />
-      <Button fx:id="btExcluir" layoutX="66.0" layoutY="361.0" mnemonicParsing="false" text="Excluir" />
+      <Button fx:id="btdelete" layoutX="66.0" layoutY="361.0" mnemonicParsing="false" text="delete" />
       <Button fx:id="btVoltar" layoutX="116.0" layoutY="361.0" mnemonicParsing="false" text="Voltar" />
    </children>
 </AnchorPane>

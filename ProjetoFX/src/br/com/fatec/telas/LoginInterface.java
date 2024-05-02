@@ -58,7 +58,7 @@ public class LoginInterface implements Initializable {
                 usuCont = new ControllerUser();
                 User usu = new User(txtLogin.getText(),txtSenha.getText(),"","");
                 try {
-                    Object usuSaida = usuCont.validar(usu);
+                    Object usuSaida = usuCont.validate(usu);
                     try
                         {
                             FXMLLoader loader = new FXMLLoader(ProjetoFX.class.getResource("/br/com/fatec/xmls/MenuInterface.fxml"));

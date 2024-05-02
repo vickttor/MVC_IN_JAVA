@@ -8,8 +8,8 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="ProjetoFX.jar" size="22902" download="eager" />
-    <jar href="lib\PadraoMVC.jar" size="70754" download="eager" />
+    <jar href="ProjetoFX.jar" size="22899" download="eager" />
+    <jar href="lib\PadraoMVC.jar" size="116500" download="eager" />
     <jar href="lib\javafx-swt.jar" size="37082" download="eager" />
     <jar href="lib\javafx.base.jar" size="757147" download="eager" />
     <jar href="lib\javafx.controls.jar" size="2599761" download="eager" />

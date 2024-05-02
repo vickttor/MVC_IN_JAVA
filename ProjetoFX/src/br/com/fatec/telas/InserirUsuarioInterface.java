@@ -80,7 +80,7 @@ public class InserirUsuarioInterface implements Initializable {
             usuCont = new ControllerUser();
             User usu = new User(txtLogin.getText(),txtSenha.getText(),txtStatus.getText(),txtTipo.getText());
             try {
-                usu = (User) usuCont.inserir(usu);
+                usu = (User) usuCont.insert(usu);
             } catch (SQLException | ClassNotFoundException ex) {
                 Logger.getLogger(LoginInterface.class.getName()).log(Level.SEVERE, null, ex);
             }
