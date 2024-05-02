@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ComboBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.telas.clientPet.UpdateClientPetInterface">
+   <children>
+      <Label fx:id="labelPet" layoutX="118.0" layoutY="159.0" text="Pet" />
+      <ComboBox fx:id="comboBoxPets" layoutX="118.0" layoutY="190.0" prefWidth="150.0" />
+      <Label fx:id="labelClient" layoutX="118.0" layoutY="224.0" text="Cliente" />
+      <ComboBox fx:id="comboBoxClients" layoutX="118.0" layoutY="244.0" prefWidth="150.0" />
+      <Label fx:id="labelObservation" layoutX="118.0" layoutY="280.0" text="Observação" />
+      <TextField fx:id="txtObservation" layoutX="118.0" layoutY="298.0" prefWidth="150.0" />
+      
+      <Button fx:id="btnSend" layoutX="249.0" layoutY="344.0" mnemonicParsing="false" text="Salvar" onAction="#saveRelation"/>
+      <Button fx:id="btnGoBack" layoutX="249.0" layoutY="388.0" mnemonicParsing="false" text="Voltar" />
+      
+      <Label fx:id="lbIdT" layoutX="151.0" layoutY="90.0" text="Id" />
+      <Label fx:id="lbId" layoutX="119.0" layoutY="90.0" text="Id" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.telas.clientPet.FetchClientPetInterface">
+   <children>
+      <Label fx:id="labelObservation" layoutX="14.0" layoutY="14.0" text="Observação" />
+      <TextField fx:id="txtObservation" layoutX="14.0" layoutY="41.0" prefHeight="25.0" prefWidth="273.0" />
+
+      <TableView fx:id="listClientPet" layoutX="14.0" layoutY="78.0" prefHeight="277.0" prefWidth="536.0">
+        <columns>
+            <TableColumn fx:id="tId" prefWidth="41.0" text="ID" />
+            <TableColumn fx:id="tIdC" prefWidth="140.0" text="Cliente" />
+            <TableColumn fx:id="tIdP" prefWidth="184.0" text="Pet" />
+            <TableColumn fx:id="tObservation" prefWidth="170.0" text="Observação" />
+        </columns>
+      </TableView>
+      
+      <Button fx:id="btnFetch" layoutX="287.0" layoutY="41.0" mnemonicParsing="false" text="Consultar" />
+      <Button fx:id="btnUpdate" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" text="Alterar" />
+      <Button fx:id="btnDelete" layoutX="66.0" layoutY="361.0" mnemonicParsing="false" text="delete" />
+      <Button fx:id="btnGoBack" layoutX="116.0" layoutY="361.0" mnemonicParsing="false" text="Voltar" />
+   </children>
+</AnchorPane>
