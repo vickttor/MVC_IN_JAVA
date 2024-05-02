@@ -24,76 +24,94 @@ import projetofx.ProjetoFX;
 /**
  * FXML Controller class
  *
- * @author ProfAlexandre
+ * @author Vickttor
  */
 public class MenuInterface implements Initializable {
     
 
-     @FXML
-    private Menu manterUsuario;
+    @FXML
+    private Menu userMenu;
 
     @FXML
-    private MenuItem inserirU;
+    private MenuItem insertUserMenuItem;
 
     @FXML
-    private MenuItem listarU;
+    private MenuItem listUserMenuItem;
 
     @FXML
-    private Menu manterPessoa;
+    private Menu clientMenu;
 
     @FXML
-    private MenuItem inserirP;
+    private MenuItem insertClientMenuItem;
 
     @FXML
-    private MenuItem listarP;
+    private MenuItem listClientMenuItem;
 
     @FXML
-    private Menu manterUP;
+    private Menu petMenu;
 
     @FXML
-    private MenuItem inserirUP;
+    private MenuItem insertPetMenuItem;
 
     @FXML
-    private MenuItem listarUP;
+    private MenuItem listPetMenuItem;
+    
+    @FXML
+    private Menu clientPetMenu;
+
+    @FXML
+    private MenuItem insertClientPetMenuItem;
+
+    @FXML
+    private MenuItem listClientPetMenuItem;
+    
+    private void navigateHandler(ActionEvent event, String resource) {
+        FXMLLoader loader = new FXMLLoader(ProjetoFX.class.getResource(resource));
+        Parent screen;
+        
+        try {
+            screen = loader.load();
+            Stage stg = ProjetoFX.getStage();
+            stg.setScene(new Scene(screen));
+            stg.show();
+        } catch (IOException ex) {
+            Logger.getLogger(MenuInterface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
     
     private void initComponentes () {
         
-        inserirU.setOnAction((ActionEvent event) -> {
-            FXMLLoader loader = new FXMLLoader(ProjetoFX.class.getResource("/br/com/fatec/xmls/InserirUsuarioInterface.fxml"));
-            Parent novatela = null;
-            try {
-                novatela = loader.load();
-                Stage stg = ProjetoFX.getStage();
-                stg.setScene(new Scene(novatela));
-                stg.show();
-            } catch (IOException ex) {
-                Logger.getLogger(MenuInterface.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
+        insertUserMenuItem.setOnAction((ActionEvent event) -> 
+                this.navigateHandler(event, "/br/com/fatec/xmls/user/InsertUserInterface.fxml"));
+        
+        listUserMenuItem.setOnAction((ActionEvent event) -> 
+               this.navigateHandler(event, "/br/com/fatec/xmls/user/FetchUserInterface.fxml"));
 
-        listarU.setOnAction((ActionEvent event) -> {
-            FXMLLoader loader = new FXMLLoader(ProjetoFX.class.getResource("/br/com/fatec/xmls/ConsultarUsuarioInterface.fxml"));
-            Parent novatela = null;
-            try {
-                novatela = loader.load();
-                Stage stg = ProjetoFX.getStage();
-                stg.setScene(new Scene(novatela));
-                stg.show();
-            } catch (IOException ex) {
-                Logger.getLogger(MenuInterface.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
-
+        insertClientMenuItem.setOnAction((ActionEvent event) -> 
+               this.navigateHandler(event, "/br/com/fatec/xmls/client/InsertClientInterface.fxml"));
+        
+        listClientMenuItem.setOnAction((ActionEvent event) -> 
+               this.navigateHandler(event, "/br/com/fatec/xmls/client/FetchClientInterface.fxml"));
+        
+        insertPetMenuItem.setOnAction((ActionEvent event) -> 
+               this.navigateHandler(event, "/br/com/fatec/xmls/pet/InsertPetInterface.fxml"));
+        
+        listPetMenuItem.setOnAction((ActionEvent event) -> 
+               this.navigateHandler(event, "/br/com/fatec/xmls/pet/FetchPetInterface.fxml"));
+        
+        insertClientPetMenuItem.setOnAction((ActionEvent event) -> 
+               this.navigateHandler(event, "/br/com/fatec/xmls/clientPet/InsertClientPetInterface.fxml"));
+        
+        listClientPetMenuItem.setOnAction((ActionEvent event) -> 
+               this.navigateHandler(event, "/br/com/fatec/xmls/clientPet/FetchClientPetInterface.fxml"));
+        
 
     }
 
-    /**
-     * Initializes the controller class.
-     */
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         initComponentes();
     }    
     

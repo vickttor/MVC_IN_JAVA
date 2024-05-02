@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.fatec.telas;
+package br.com.fatec.telas.user;
 
+import br.com.fatec.telas.LoginInterface;
 import padraomvc.model.bean.User;
 import padraomvc.controller.ControllerUser;
 import java.io.IOException;
@@ -30,9 +31,9 @@ import projetofx.ProjetoFX;
 /**
  * FXML Controller class
  *
- * @author ProfAlexandre
+ * @author Vickttor
  */
-public class InserirUsuarioInterface implements Initializable {
+public class InsertUserInterface implements Initializable {
 
     /**
      * Initializes the controller class.

@@ -9,34 +9,28 @@
    <children>
       <MenuBar>
         <menus>
-          <Menu fx:id="manterUsuario" mnemonicParsing="false" text="Usuário">
+          <Menu fx:id="userMenu" mnemonicParsing="false" text="Usuário">
             <items>
-              <MenuItem fx:id="inserirU" mnemonicParsing="false" text="Inserir Usuário" />
-                  <MenuItem fx:id="listarU" mnemonicParsing="false" text="Listar Usuário" />
+              <MenuItem fx:id="insertUserMenuItem" mnemonicParsing="false" text="Inserir Usuário" />
+                  <MenuItem fx:id="listUserMenuItem" mnemonicParsing="false" text="Listar Usuário" />
             </items>
           </Menu>
-          <Menu fx:id="manterSistema" mnemonicParsing="false" text="Sistema">
+          <Menu fx:id="clientMenu" mnemonicParsing="false" text="Cliente">
             <items>
-              <MenuItem fx:id="inserirS" mnemonicParsing="false" text="Inserir Sistema" />
-                  <MenuItem fx:id="listars" mnemonicParsing="false" text="Listar Sistema" />
+              <MenuItem fx:id="insertClientMenuItem" mnemonicParsing="false" text="Inserir Cliente" />
+                  <MenuItem fx:id="listClientMenuItem" mnemonicParsing="false" text="Listar Cliente" />
             </items>
           </Menu>
-          <Menu fx:id="manterPet" mnemonicParsing="false" text="Pet">
+          <Menu fx:id="petMenu" mnemonicParsing="false" text="Pet">
             <items>
-              <MenuItem fx:id="inserirP" mnemonicParsing="false" text="Inserir Pet" />
-                  <MenuItem fx:id="listarP" mnemonicParsing="false" text="Listar Pet" />
+              <MenuItem fx:id="insertPetMenuItem" mnemonicParsing="false" text="Inserir Pet" />
+                  <MenuItem fx:id="listPetMenuItem" mnemonicParsing="false" text="Listar Pet" />
             </items>
           </Menu>
-          <Menu fx:id="manterUS" mnemonicParsing="false" text="Usuário - Sistema">
+          <Menu fx:id="clientPetMenu" mnemonicParsing="false" text="Pet - Cliente">
             <items>
-              <MenuItem fx:id="inserirUS" mnemonicParsing="false" text="Relacionar Usuário e Sistema" />
-                  <MenuItem fx:id="listarUS" mnemonicParsing="false" text="Listar eelações" />
-            </items>
-          </Menu>
-          <Menu fx:id="manterPU" mnemonicParsing="false" text="Pet - Usuario">
-            <items>
-              <MenuItem fx:id="inserirPU" mnemonicParsing="false" text="Relacionar Pet e Usuário" />
-                  <MenuItem fx:id="listarPU" mnemonicParsing="false" text="Listar eelações" />
+              <MenuItem fx:id="insertClientPetMenuItem" mnemonicParsing="false" text="Relacionar Pet e Cliente" />
+                  <MenuItem fx:id="listClientPetMenuItem" mnemonicParsing="false" text="Listar relações" />
             </items>
           </Menu>
         </menus>

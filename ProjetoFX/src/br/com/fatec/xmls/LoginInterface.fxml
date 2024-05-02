@@ -8,12 +8,12 @@
 
 <AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.telas.LoginInterface">
    <children>
-      <Label fx:id="lbLogin" layoutX="163.0" layoutY="165.0" text="Login" />
-      <TextField fx:id="txtLogin" layoutX="163.0" layoutY="190.0" prefHeight="25.0" prefWidth="234.0" />
+      <Label fx:id="loginLabel" layoutX="163.0" layoutY="165.0" text="Login" />
+      <TextField fx:id="loginTxtField" layoutX="163.0" layoutY="190.0" prefHeight="25.0" prefWidth="234.0" />
       
-      <Label fx:id="lbSenha" layoutX="163.0" layoutY="232.0" text="Senha" />
-      <PasswordField fx:id="txtSenha" layoutX="163.0" layoutY="250.0" prefHeight="25.0" prefWidth="234.0" />
+      <Label fx:id="passwordLabel" layoutX="163.0" layoutY="232.0" text="Senha" />
+      <PasswordField fx:id="passwordTxtField" layoutX="163.0" layoutY="250.0" prefHeight="25.0" prefWidth="234.0" />
       
-      <Button fx:id="btEntrar" layoutX="163.0" layoutY="291.0" mnemonicParsing="false" text="Entrar" />
+      <Button fx:id="sendButton" layoutX="163.0" layoutY="291.0" mnemonicParsing="false" text="Entrar" />
    </children>
 </AnchorPane>

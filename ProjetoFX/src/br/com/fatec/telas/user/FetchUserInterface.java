@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.fatec.telas;
+package br.com.fatec.telas.user;
 
+import br.com.fatec.telas.LoginInterface;
 import padraomvc.model.bean.User;
 import padraomvc.controller.ControllerUser;
 import java.io.IOException;
@@ -38,9 +39,9 @@ import projetofx.ProjetoFX;
 /**
  * FXML Controller class
  *
- * @author ProfAlexandre
+ * @author Vickttor
  */
-public class ConsultarUsuarioInterface implements Initializable {
+public class FetchUserInterface implements Initializable {
 
     @FXML
     private Label lbLogin;
@@ -111,7 +112,7 @@ public class ConsultarUsuarioInterface implements Initializable {
                 TablePosition pos = listaUsuario.getSelectionModel().getSelectedCells().get(0);
                 int row = pos.getRow();
                 setUsuario(listaUsuario.getItems().get(row));
-                FXMLLoader loader = new FXMLLoader(ProjetoFX.class.getResource("/br/com/fatec/xmls/AlterarUsuarioInterface.fxml"));
+                FXMLLoader loader = new FXMLLoader(ProjetoFX.class.getResource("/br/com/fatec/xmls/user/UpdateUserInterface.fxml"));
                 Parent novatela = null;
                 try {
                     novatela = loader.load();
@@ -119,7 +120,7 @@ public class ConsultarUsuarioInterface implements Initializable {
                     stg.setScene(new Scene(novatela));
                     stg.show();
                 } catch (IOException ex) {
-                    Logger.getLogger(ConsultarUsuarioInterface.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(FetchUserInterface.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
@@ -132,7 +133,7 @@ public class ConsultarUsuarioInterface implements Initializable {
                 usuCont.delete(usu);
                 listaUsuario.getItems().remove(row);
             } catch (SQLException | ClassNotFoundException ex) {
-                Logger.getLogger(ConsultarUsuarioInterface.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(FetchUserInterface.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null,"Erro = No delete");
 
             }
@@ -149,7 +150,7 @@ public class ConsultarUsuarioInterface implements Initializable {
                     stg.setScene(new Scene(novatela));
                     stg.show();
                 } catch (IOException ex) {
-                    Logger.getLogger(ConsultarUsuarioInterface.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(FetchUserInterface.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });

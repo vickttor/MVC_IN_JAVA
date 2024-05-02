@@ -30,33 +30,33 @@ import projetofx.ProjetoFX;
 /**
  * FXML Controller class
  *
- * @author ProfAlexandre
+ * @author Vickttor
  */
 public class LoginInterface implements Initializable {
 
     @FXML
-    private Label lbLogin;
+    private Label loginLabel;
 
     @FXML
-    private Label lbSenha;
+    private Label passwordLabel;
 
     @FXML
-    private TextField txtLogin;
+        private TextField loginTxtField;
 
     @FXML
-    private PasswordField txtSenha;
+    private PasswordField passwordTxtField;
 
     @FXML
-    private Button btEntrar;
+    private Button sendButton;
     
     ControllerUser usuCont = null;
 
     private void initComponentes () {
-        btEntrar.setOnAction(new EventHandler<ActionEvent>() {
+        sendButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 usuCont = new ControllerUser();
-                User usu = new User(txtLogin.getText(),txtSenha.getText(),"","");
+                User usu = new User(loginTxtField.getText(),passwordTxtField.getText(),"","");
                 try {
                     Object usuSaida = usuCont.validate(usu);
                     try
@@ -80,9 +80,6 @@ public class LoginInterface implements Initializable {
         
     }
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         initComponentes();

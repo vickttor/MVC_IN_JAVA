@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.fatec.telas;
+package br.com.fatec.telas.user;
 
 import padraomvc.model.bean.User;
 import padraomvc.controller.ControllerUser;
@@ -30,9 +30,9 @@ import projetofx.ProjetoFX;
 /**
  * FXML Controller class
  *
- * @author ProfAlexandre
+ * @author Vickttor
  */
-public class AlterarUsuarioInterface implements Initializable {
+public class UpdateUserInterface implements Initializable {
 
     @FXML
     private Button btSalvar;
@@ -83,7 +83,7 @@ public class AlterarUsuarioInterface implements Initializable {
     private void initComponentes (){
 
         usuCont = new ControllerUser();
-        ConsultarUsuarioInterface telaAnterior = new ConsultarUsuarioInterface();
+        FetchUserInterface telaAnterior = new FetchUserInterface();
         setUsuario(telaAnterior.getUsuario());
 
         btVoltar.setOnAction(new EventHandler<ActionEvent>() {
@@ -97,7 +97,7 @@ public class AlterarUsuarioInterface implements Initializable {
                     stg.setScene(new Scene(novatela));
                     stg.show();
                 } catch (IOException ex) {
-                    Logger.getLogger(AlterarUsuarioInterface.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(UpdateUserInterface.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
@@ -114,9 +114,9 @@ public class AlterarUsuarioInterface implements Initializable {
                 try {
                     usuCont.update(usu);
                 } catch (SQLException ex) {
-                    Logger.getLogger(AlterarUsuarioInterface.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(UpdateUserInterface.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(AlterarUsuarioInterface.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(UpdateUserInterface.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
                 FXMLLoader loader = new FXMLLoader(ProjetoFX.class.getResource("/br/com/fatec/xmls/MenuInterface.fxml"));
@@ -127,7 +127,7 @@ public class AlterarUsuarioInterface implements Initializable {
                     stg.setScene(new Scene(novatela));
                     stg.show();
                 } catch (IOException ex) {
-                    Logger.getLogger(AlterarUsuarioInterface.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(UpdateUserInterface.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });

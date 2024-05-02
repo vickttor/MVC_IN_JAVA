@@ -5,7 +5,6 @@
  */
 package projetofx;
 
-import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,7 +13,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author ProfAlexandre
+ * @author Vickttor
  */
 public class ProjetoFX extends Application {
     
