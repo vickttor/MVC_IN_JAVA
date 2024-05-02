@@ -74,7 +74,7 @@ public class UpdateClientInterface implements Initializable {
 
         btnGoBack.setOnAction((ActionEvent event) -> {
             FXMLLoader loader = new FXMLLoader(ProjetoFX.class.getResource("/br/com/fatec/xmls/MenuInterface.fxml"));
-            Parent screen = null;
+            Parent screen;
             try {
                 screen = loader.load();
                 Stage stg = ProjetoFX.getStage();
